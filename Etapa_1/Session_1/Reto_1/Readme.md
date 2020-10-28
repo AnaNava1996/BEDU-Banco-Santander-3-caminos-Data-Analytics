@@ -1,4 +1,4 @@
-## Reto 1: Estructura de una tabla
+## Reto 1:
 
 
 <div style="text-align: justify;">
