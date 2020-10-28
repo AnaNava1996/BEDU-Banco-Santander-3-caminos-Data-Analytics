@@ -24,12 +24,12 @@ DESCRIBE articulo;
 ![imagen](images_reto_1/reto_1_4.png)
 
 ```sql
-DESCRIBE venta;
+DESCRIBE empleado;
 ```
 ![imagen](images_reto_1/reto_1_5.png)
 
 ```sql
-DESCRIBE venta;
+DESCRIBE puesto;
 ```
 ![imagen](images_reto_1/reto_1_6.png)
 
