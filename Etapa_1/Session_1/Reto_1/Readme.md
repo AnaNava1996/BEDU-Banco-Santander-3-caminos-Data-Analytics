@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Reto 1: Estructura de una tabla
 
 
@@ -52,8 +51,3 @@ DESCRIBE venta;
 </div>
 
 
-
-
-=======
-## Reto 1: Estructura de una tabla
->>>>>>> 9c2ca52a88af3aa38b3ee17dd893175b5a0e407e
