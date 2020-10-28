@@ -40,10 +40,10 @@ DESCRIBE venta;
 
 | Tipo      | Descripción                   |
 |-----------|-------------------------------|
-| int       | Datos numéricos enteros       |
-| varchar   | Cadenas de caracteres         |
-| timestamp | Fechas                        |
-| double    | Datos numéricos con decimales |
+| int       | Número entero, positivo o negativo, con tamaño de 4 bytes       |
+| varchar   | Cadena de caracteres de longitud variable         |
+| timestamp | Dato de fecha que incluye la fecha y la hora, y tiene un rango de '1970-01-01 00:00:01' UTC a '2038-01-19 03:14:07' UTC.                        |
+| double    | Número flotante de presición doble |
 
 </div>
 
