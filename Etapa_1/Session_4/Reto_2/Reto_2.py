@@ -3,7 +3,7 @@ from pymongo import MongoClient
 # https://api.mongodb.com/python/current
 
 
-##############   ¿Qué comentarios ha hecho Greg Powell?                     ##################
+###############   ¿Qué comentarios ha hecho Greg Powell?                     ##################
 
 client = MongoClient('mongodb+srv://bananapassword:bananapassword@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&connectTimeoutMS=600000&socketTimeoutMS=6000000&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 filter={
@@ -21,7 +21,7 @@ result = client['sample_mflix']['comments'].find(
 
 
 
-##############   ¿Qué comentarios han hecho Greg Powell o Mercedes Tyler?   ##################
+###############   ¿Qué comentarios han hecho Greg Powell o Mercedes Tyler?   ##################
 
 client = MongoClient('mongodb+srv://bananapassword:bananapassword@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&connectTimeoutMS=600000&socketTimeoutMS=6000000&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 filter={
@@ -45,5 +45,5 @@ result = client['sample_mflix']['comments'].find(
 )
 
 
-##############   ¿Cuál es el máximo número de comentarios en una película?  ##################
-##############   ¿Cuál es título de las cinco películas más comentadas?     ##################
+###############   ¿Cuál es el máximo número de comentarios en una película?  ##################
+###############   ¿Cuál es título de las cinco películas más comentadas?     ##################

@@ -1,4 +1,4 @@
-¿Qué comentarios ha hecho Greg Powell?
+//      ¿Qué comentarios ha hecho Greg Powell?
 
 {
  filter: {
@@ -12,7 +12,7 @@
 
 
 
-¿Qué comentarios han hecho Greg Powell o Mercedes Tyler?
+//      ¿Qué comentarios han hecho Greg Powell o Mercedes Tyler?
 
 {
  filter: {
@@ -35,5 +35,5 @@
 
 
 
-¿Cuál es el máximo número de comentarios en una película?
-¿Cuál es título de las cinco películas más comentadas?
+//      ¿Cuál es el máximo número de comentarios en una película?
+//      ¿Cuál es título de las cinco películas más comentadas?
