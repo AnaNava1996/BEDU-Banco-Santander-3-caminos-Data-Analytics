@@ -1,0 +1,39 @@
+¿Qué comentarios ha hecho Greg Powell?
+
+{
+ filter: {
+  name: 'Greg Powell'
+ },
+ project: {
+  text: 1,
+  _id: 0
+ }
+}
+
+
+
+¿Qué comentarios han hecho Greg Powell o Mercedes Tyler?
+
+{
+ filter: {
+  $or: [
+   {
+    name: 'Greg Powell'
+   },
+   {
+    name: 'Mercedes Tyler'
+   }
+  ]
+ },
+ project: {
+  name: 1,
+  text: 1,
+  _id: 0
+ }
+}
+
+
+
+
+¿Cuál es el máximo número de comentarios en una película?
+¿Cuál es título de las cinco películas más comentadas?
