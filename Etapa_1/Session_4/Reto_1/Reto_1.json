@@ -1,4 +1,4 @@
-{comentario:"Fecha, nombre y texto de cada comentario."}
+//      Fecha, nombre y texto de cada comentario.
 {
  project: {
   name: 1,
@@ -9,7 +9,7 @@
 }
 
 
-{comentario:"Título, elenco y año de cada película."}
+//      Título, elenco y año de cada película.
 {
  project: {
   title: 1,
@@ -20,7 +20,7 @@
 }
 
 
-{comentario:"Nombre y contraseña de cada usuario."}
+//      Nombre y contraseña de cada usuario.
 {
  project: {
   name: 1,

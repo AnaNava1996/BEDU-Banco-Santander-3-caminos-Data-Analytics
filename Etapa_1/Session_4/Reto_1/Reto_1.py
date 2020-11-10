@@ -3,7 +3,7 @@
 
 
 
-################    Fecha, nombre y texto de cada comentario.    ##############
+#################    Fecha, nombre y texto de cada comentario.    ##############
 client = MongoClient('mongodb+srv://bananapassword:bananapassword@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&connectTimeoutMS=600000&socketTimeoutMS=6000000&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 filter={}
 project={
@@ -18,7 +18,7 @@ result = client['sample_mflix']['comments'].find(
   projection=project
 )
 
-################    Título, elenco y año de cada película    ##################
+#################    Título, elenco y año de cada película    ##################
 
 client = MongoClient('mongodb+srv://bananapassword:bananapassword@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&connectTimeoutMS=600000&socketTimeoutMS=6000000&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 filter={}
@@ -35,7 +35,7 @@ result = client['sample_mflix']['movies'].find(
 )
 
 
-################    Nombre y contraseña de cada usuario.    ###################
+#################    Nombre y contraseña de cada usuario.    ###################
 
 client = MongoClient('mongodb+srv://bananapassword:bananapassword@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&connectTimeoutMS=600000&socketTimeoutMS=6000000&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 filter={}
