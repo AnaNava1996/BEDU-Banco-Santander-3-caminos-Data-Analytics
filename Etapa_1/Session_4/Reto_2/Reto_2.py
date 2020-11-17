@@ -5,7 +5,6 @@ from pymongo import MongoClient
 
 ###############   ¿Qué comentarios ha hecho Greg Powell?                     ##################
 
-client = MongoClient('mongodb+srv://bananapassword:bananapassword@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&connectTimeoutMS=600000&socketTimeoutMS=6000000&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 filter={
     'name': 'Greg Powell'
 }
@@ -23,7 +22,6 @@ result = client['sample_mflix']['comments'].find(
 
 ###############   ¿Qué comentarios han hecho Greg Powell o Mercedes Tyler?   ##################
 
-client = MongoClient('mongodb+srv://bananapassword:bananapassword@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&connectTimeoutMS=600000&socketTimeoutMS=6000000&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 filter={
     '$or': [
         {
@@ -69,7 +67,6 @@ result = client['sample_mflix']['movies'].find(
 
 ###############   ¿Cuál es título de las cinco películas más comentadas?     ##################
 
-client = MongoClient('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false')
 filter={}
 project={
     'title': 1, 
