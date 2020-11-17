@@ -46,4 +46,45 @@ result = client['sample_mflix']['comments'].find(
 
 
 ###############   ¿Cuál es el máximo número de comentarios en una película?  ##################
+
+client = MongoClient('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false')
+filter={}
+project={
+    'title': 1, 
+    'num_mflix_comments': 1
+}
+sort=list({
+    'num_mflix_comments': -1
+}.items())
+limit=1
+
+result = client['sample_mflix']['movies'].find(
+  filter=filter,
+  projection=project,
+  sort=sort,
+  limit=limit
+)
+
+
+
 ###############   ¿Cuál es título de las cinco películas más comentadas?     ##################
+
+client = MongoClient('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false')
+filter={}
+project={
+    'title': 1, 
+    'num_mflix_comments': 1, 
+    '_id': 0
+}
+sort=list({
+    'num_mflix_comments': -1
+}.items())
+limit=5
+
+result = client['sample_mflix']['movies'].find(
+  filter=filter,
+  projection=project,
+  sort=sort,
+  limit=limit
+)
+
