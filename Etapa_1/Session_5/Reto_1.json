@@ -1,7 +1,7 @@
 Propiedades que no permitan fiestas.
 {
  filter: {
-  house_rules: RegExp('no parties', i)
+  house_rules: RegExp('not? part(ies|y)', i)
  },
  project: {
   name: 1,
@@ -10,14 +10,13 @@ Propiedades que no permitan fiestas.
 }
 
 
-
 Propiedades que admitan mascotas.
 
 Version 1
 {
  filter: {
   house_rules: {
-   $not: RegExp('no pets allowed', i)
+   $not: RegExp('not? pets? allow(ed)?', i)
   }
  },
  project: {
@@ -42,7 +41,7 @@ Version 2
 Propiedades que no permitan fumadores.
 {
  filter: {
-  house_rules: RegExp('no smoking', i)
+  house_rules: RegExp('not? smok(ing)?', i)
  }
 }
 
@@ -53,10 +52,10 @@ Propiedades que no permitan fiestas ni fumadores.
  filter: {
   $and: [
    {
-    house_rules: RegExp('no smoking', i)
+    house_rules: RegExp('not? smok(ing)?', i)
    },
    {
-    house_rules: RegExp('no parties', i)
+    house_rules: RegExp('not? part(ies|y)', i)
    }
   ]
  },
