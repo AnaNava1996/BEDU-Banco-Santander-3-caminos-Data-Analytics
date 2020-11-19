@@ -12,7 +12,8 @@ from pymongo import MongoClient
 #
 #################################################
 
-client = MongoClient('mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false')
+
+client = MongoClient('mongodb+srv://banana:mgchcjmglml@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 result = client['sample_airbnb']['listingsAndReviews'].aggregate([
     {
         '$match': {
@@ -28,6 +29,10 @@ result = client['sample_airbnb']['listingsAndReviews'].aggregate([
             'total': {
                 '$sum': 1
             }
+        }
+    }, {
+        '$project': {
+            '_id': 0
         }
     }
 ])
