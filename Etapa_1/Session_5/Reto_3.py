@@ -13,7 +13,7 @@ from pymongo import MongoClient
 #################################################
 
 
-client = MongoClient('mongodb+srv://banana:mgchcjmglml@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
+client = MongoClient('mongodb+srv://***********:***********@clusterana.usdti.mongodb.net/test?authSource=admin&replicaSet=atlas-lapozq-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
 result = client['sample_airbnb']['listingsAndReviews'].aggregate([
     {
         '$match': {
