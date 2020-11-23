@@ -47,3 +47,31 @@ SELECT contactLastName, contactFirstName FROM customers ORDER BY contactLastName
 SELECT customerNumber, customerName, creditLimit FROM customers ORDER BY creditLimit DESC LIMIT 5;
 # Dentro de la tabla customers, obtén el número de cliente, nombre de cliente y el límite de crédito de los cinco clientes con el límite de crédito más bajo.
 SELECT customerNumber, customerName, creditLimit FROM customers ORDER BY creditLimit LIMIT 5;
+
+#si me pidieran ordenar a todos los que tienen los 5 créditos más bajos ya que se repiten.alter
+
+SELECT 
+    c.creditLimit, c.customerNumber, c.customerName
+FROM
+    customers AS c
+        INNER JOIN
+    (SELECT DISTINCT
+        creditLimit
+    FROM
+        customers
+    ORDER BY creditLimit
+    LIMIT 5) AS subi ON c.creditLimit = subi.creditLimit;
+
+
+#si me pidieran nombres alfabeticos de la a la c, BETWEEN is inclusive
+SELECT 
+    creditLimit, customerNumber, customerName
+FROM
+    customers
+WHERE
+    customerName NOT LIKE 'D'
+        AND customerName BETWEEN 'A' AND 'D'
+ORDER BY customerName;
+
+
+
