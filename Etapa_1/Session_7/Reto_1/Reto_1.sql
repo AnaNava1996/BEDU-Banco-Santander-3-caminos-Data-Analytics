@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users(
 #Definir los campos y tipos de datos para la tabla movies haciendo uso de los archivos movies.dat y README.
 #Crear la tabla movies (recuerda usar el mismo nombre del archivo sin la extensión para vincular nombres de tablas con archivos).
 CREATE TABLE IF NOT EXISTS movies(
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	movieid INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     title VARCHAR(150),  # hay títulos extremadamente largos en hollywood
     genres VARCHAR(100)
 );
@@ -20,11 +20,8 @@ CREATE TABLE IF NOT EXISTS ratings(
 	userid INT,
     movieid INT,
 	ratings TINYINT,
-    time_stamp TIMESTAMP,
+    time_stamp BIGINT,
     FOREIGN KEY (userid) REFERENCES users(id),
-    FOREIGN KEY (movieid) REFERENCES movies(id)
+    FOREIGN KEY (movieid) REFERENCES movies(movieid)
 );
-
-
-
 
