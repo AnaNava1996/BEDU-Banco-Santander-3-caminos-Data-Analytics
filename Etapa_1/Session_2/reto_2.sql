@@ -1,13 +1,31 @@
 #¿Cuál es el promedio de salario de los puestos?
-Select avg(salario) from puesto;
+SELECT 
+    AVG(salario)
+FROM
+    puesto;
 
 #¿Cuántos artículos incluyen la palabra Pasta en su nombre?
-select count(*) from articulo where nombre like "%pasta%";
+SELECT 
+    COUNT(*)
+FROM
+    articulo
+WHERE
+    nombre LIKE '%pasta%';
 
 #¿Cuál es el salario mínimo y máximo?
-select max(salario) from puesto;
-select min(salario) from puesto;
+SELECT 
+    MAX(salario) AS maximo, MIN(salario) AS minimo
+FROM
+    puesto;
+
 
 #¿Cuál es la suma del salario de los últimos cinco puestos agregados?
-#select * from puesto order by id_puesto desc limit 5;
-select sum(puesto.salario) as total from (select * from puesto order by id_puesto desc limit 5) as puesto;
+SELECT 
+    SUM(puesto.salario) AS total
+FROM
+    (SELECT 
+        *
+    FROM
+        puesto
+    ORDER BY id_puesto DESC
+    LIMIT 5) AS puesto;
