@@ -13,18 +13,17 @@ WHERE
 
 #####	¿Cuál es la cantidad mínima y máxima de ventas de cada empleado?	############
 SELECT
-    id_empleado, MIN(total_ventas), MAX(total_ventas)
+    id_empleado, MIN(total) AS minimo_de_ventas, MAX(total) AS maximo_de_ventas
 FROM
     (SELECT 
-        clave, id_empleado, COUNT(*) total_ventas
+        clave, id_empleado, COUNT(*) total
     FROM
         venta
-    GROUP BY clave , id_empleado) AS sq
+    GROUP BY clave , id_empleado) AS sub
 GROUP BY id_empleado;
 
 
 #####	¿Cuáles claves de venta incluyen artículos cuyos precios son mayores a $5,000?	#######
-
 SELECT 
     clave
 FROM
