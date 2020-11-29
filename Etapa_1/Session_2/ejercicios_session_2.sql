@@ -39,7 +39,8 @@ SELECT customerNumber, checkNumber, amount FROM payments WHERE amount = (SELECT 
 SELECT customerNumber, checkNumber, amount FROM payments WHERE amount > (SELECT AVG(amount) FROM payments);
 
 #Obten el nombre de aquellos clientes que no han hecho ninguna orden.
-SELECT customerName FROM customers WHERE customerNumber NOT IN (SELECT customerNumber FROM orders); 
+SELECT customerName FROM customers WHERE customerNumber NOT IN (SELECT customerNumber FROM orders);
+SELECT customerName FROM customers LEFT JOIN orders USING(customerNumber) WHERE orders.customerNumber IS NULL;
 
 #Obten el máximo, mínimo y promedio del número de productos en las órdenes de venta.
 SELECT * FROM orderdetails;
