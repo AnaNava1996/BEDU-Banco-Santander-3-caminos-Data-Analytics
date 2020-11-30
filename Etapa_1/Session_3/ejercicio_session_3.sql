@@ -2,19 +2,16 @@
 #Todas las consultas que realices deberás mantenerlas dentro del editor de textos de MySQL Workbench. Al finalizar, guarda este archivo, llendo al menú File > Save script.
 #Para estas consultas usa RIGHT JOIN
 #Obten el código de producto, nombre de producto y descripción de todos los productos.
-USE classicmodels;
-DESCRIBE products;
 SELECT productCode, productName, productDescription FROM products;
 #Obten el número de orden, estado y costo total de cada orden.
-#costo total orden--> SELECT SUM(priceEach*quantityOrdered) AS total,orderNumber FROM orderdetails GROUP BY orderNumber;
 SELECT orders.orderNumber, orders.status, CostoTotalOrdenes.total 
 FROM orders RIGHT JOIN 
 (SELECT SUM(priceEach*quantityOrdered) AS total,orderNumber FROM orderdetails GROUP BY orderNumber) AS CostoTotalOrdenes
 ON orders.orderNumber=CostoTotalOrdenes.orderNumber;
-
 #Obten el número de orden, fecha de orden, línea de orden, nombre del producto, cantidad ordenada y precio de cada pieza que muestre los detalles de cada orden.
-
+SELECT od.orderNumber, o.orderDate, od.orderLineNumber, p.productName, od.quantityOrdered, od.priceEach FROM orders AS o RIGHT JOIN orderdetails AS od ON od.orderNumber=o.orderNumber RIGHT JOIN products AS p ON od.productCode=p.productCode;
 #Obtén el número de orden, nombre del producto, el precio sugerido de fábrica (msrp) y precio de cada pieza.
+SELECT o.orderNumber, p.productName, p.MSRP, p.buyPrice FROM orderdetails AS o RIGHT JOIN products AS p ON o.productCode=p.productCode;
 
 #Para estas consultas usa LEFT JOIN
 
@@ -24,6 +21,7 @@ SELECT c.customerNumber, c.customerName, o.orderNumber, o.status FROM customers 
 
 #Obtén los clientes que no tienen una orden asociada.
 SELECT c.customerName FROM customers AS c LEFT JOIN orders AS o ON c.customerNumber=o.customerNumber WHERE o.customerNumber is NULL;
+
 #los que si tienen orden asociada.
 SELECT DISTINCT c.customerName FROM customers AS c LEFT JOIN orders AS o ON c.customerNumber=o.customerNumber;
 
@@ -49,6 +47,60 @@ FROM
 GROUP BY s.lastName , FirstName;
 #Para estas consultas usa RIGHT JOIN
 
+#################################################################################################################
 #Repite los ejercicios 5 a 7 usando RIGHT JOIN.
 
+
+#################################################################################################################
 #Escoge 3 consultas de los ejercicios anteriores, crea una vista y escribe una consulta para cada una.
+
+#Obtén el apellido de empleado, nombre de empleado, nombre de cliente, número de cheque y total, es decir, los clientes asociados a cada empleado.
+
+
+select * from employees;
+select * from orderdetails;
+select * from payments;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
