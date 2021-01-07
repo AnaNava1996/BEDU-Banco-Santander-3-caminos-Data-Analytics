@@ -21,6 +21,7 @@ SELECT c.customerNumber, c.customerName, o.orderNumber, o.status FROM customers 
 
 #Obtén los clientes que no tienen una orden asociada.
 SELECT c.customerName FROM customers AS c LEFT JOIN orders AS o ON c.customerNumber=o.customerNumber WHERE o.customerNumber is NULL;
+SELECT c.customerName FROM customers AS c WHERE c.customerNumber NOT IN (SELECT customerNumber FROM orders);
 
 #los que si tienen orden asociada.
 SELECT DISTINCT c.customerName FROM customers AS c LEFT JOIN orders AS o ON c.customerNumber=o.customerNumber;
@@ -28,7 +29,6 @@ SELECT DISTINCT c.customerName FROM customers AS c LEFT JOIN orders AS o ON c.cu
 
 
 #Obtén el apellido de empleado, nombre de empleado, nombre de cliente, número de cheque y total, es decir, los clientes asociados a cada empleado.
-
 SELECT 
     s.lastName,
     s.firstName,
@@ -45,23 +45,58 @@ FROM
     GROUP BY e.employeeNumber , c.customerName
     ORDER BY lastname , firstName) AS s
 GROUP BY s.lastName , FirstName;
-#Para estas consultas usa RIGHT JOIN
 
+
+#Para estas consultas usa RIGHT JOIN
 #################################################################################################################
 #Repite los ejercicios 5 a 7 usando RIGHT JOIN.
+# 5-  Obtén el número de cliente, nombre de cliente, número de orden y estado de cada cliente.
+SELECT c.customerNumber, c.customerName, c.state, o.orderNumber FROM customers AS c RIGHT JOIN orders AS o ON c.customerNumber=o.customerNumber;
+# 6-  Obtén los clientes que no tienen una orden asociada.
+SELECT c.customerNumber, c.customerName FROM orders AS o RIGHT JOIN customers AS c ON o.customerNumber=c.customerNumber WHERE o.customerNumber IS NULL; 
+# 7-  Obtén el apellido de empleado, nombre de empleado, nombre de cliente, número de cheque y total, es decir, los clientes asociados a cada empleado.
+
+
 
 
 #################################################################################################################
 #Escoge 3 consultas de los ejercicios anteriores, crea una vista y escribe una consulta para cada una.
 
-#Obtén el apellido de empleado, nombre de empleado, nombre de cliente, número de cheque y total, es decir, los clientes asociados a cada empleado.
+# Obtén el apellido de empleado, nombre de empleado, nombre de cliente, número de cheque y 
+# total, es decir, los clientes asociados a cada empleado.
 
+
+
+#Obten el número de orden, estado y costo total de cada orden.
+
+#SELECT orders.orderNumber, orders.status, CostoTotalOrdenes.total 
+#FROM orders RIGHT JOIN 
+#(SELECT SUM(priceEach*quantityOrdered) AS total,orderNumber FROM orderdetails GROUP BY orderNumber) AS CostoTotalOrdenes
+#ON orders.orderNumber=CostoTotalOrdenes.orderNumber;
+
+CREATE VIEW CostoTotalOrdenes AS
+	SELECT 
+		SUM(priceEach*quantityOrdered) AS total, 
+        orderNumber 
+	FROM 
+		orderdetails 
+    GROUP BY 
+		orderNumber;
+
+SELECT
+	o.orderNumber, 
+    o.status, 
+    cos.total 
+FROM 
+	orders AS o 
+RIGHT JOIN
+	CostoTotalOrdenes AS cos
+ON 
+	o.orderNumber = cos.orderNumber;	
 
 select * from employees;
-select * from orderdetails;
+select * from customers;
 select * from payments;
-
-
 
 
 
