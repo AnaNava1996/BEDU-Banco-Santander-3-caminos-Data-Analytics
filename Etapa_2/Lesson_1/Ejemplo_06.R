@@ -1,7 +1,7 @@
-# EJEMPLO 6. Loops y pseudocódigo: for, while, if, else, if-else
+# EJEMPLO 6. Loops y pseudoc?digo: for, while, if, else, if-else
 
 # Objetivo
-# Conocer la inicialización de variables
+# Conocer la inicializaci?n de variables
 # Ejecutar un loop, for, while, if y if-else
   
 # Requisitos
@@ -9,11 +9,11 @@
 # Prework
 
 # Desarrollo
-# Durante este ejemplo se darán las bases para inicializar una variable que sea 
+# Durante este ejemplo se dar?n las bases para inicializar una variable que sea 
 # utilizada dentro de un loop, adicionalmente se utilizaran los comandos while, 
 # if y if-else para poder utilizarlos adecuadamente
 
-# Este ejemplo elevará al cuadrado las primeras 10 entradas de un vector 
+# Este ejemplo elevar? al cuadrado las primeras 10 entradas de un vector 
 # generado aleatoriamente de 20 entradas
 
 w <- rnorm(20)              
@@ -23,18 +23,28 @@ print("Este loop calcula el cuadrado de los 10 primeros elementos del vector w")
 
 wsq <- 0
 
+typeof(wsq)
+class(wsq)
+
 for(i in 1:10) {
   wsq[i] <- w[i]**2
   print(wsq[i])
 }
-
-# Los bucles WHILE comienzan comprobando una condición. Si esta es verdadera, 
-# entonces se entra al cuerpo del bucle. Una vez completada una ejecución de 
-# este bloque, se comprueba la condición nuevamente y así sucesivamente hasta 
-# que la comprobación de la condición de falso.
+wsq[4]
+typeof(wsq)
+class(wsq)
+elvecto <- c(1,2,3,4)
+typeof(elvecto)
+class(elvecto)
+print(wsq)
+print(elvecto)
+# Los bucles WHILE comienzan comprobando una condici?n. Si esta es verdadera, 
+# entonces se entra al cuerpo del bucle. Una vez completada una ejecuci?n de 
+# este bloque, se comprueba la condici?n nuevamente y as? sucesivamente hasta 
+# que la comprobaci?n de la condici?n de falso.
 
 # while(<condicion>) {
-#                     código
+#                     c?digo
 #                     ...
 #             }
 
@@ -46,38 +56,37 @@ while(count < 10) {
   count <- count + 1
 }
   
-# Pseudocódigo para IF - ELSE
+# Pseudoc?digo para IF - ELSE
 
 # if(<condicion>) {
-  ## bloque de código
+  ## bloque de c?digo
 # }
 
-## Continua con el resto del código
+## Continua con el resto del c?digo
 
 # if(<condicion>){
-                  ## bloque de código
+                  ## bloque de c?digo
 #               } else {
-                        ## otro bloque de código
+                        ## otro bloque de c?digo
 #                      }
 
 # if(<condition1>) {
-                     ## bloque de código
+                     ## bloque de c?digo
 #                 } else if(<condicion2>) {
-                                           ## otro bloque de código
+                                           ## otro bloque de c?digo
 #                                        } else {
-                                                 ## otro bloque de código
+                                                 ## otro bloque de c?digo
 #                                               }
 
 # Ejemplo
 
-x <- runif(1, 0, 10) ## creamos un número aleatorio entre 0 y 10
+x <- runif(1, 0, 10) ## creamos un n?mero aleatorio entre 0 y 10
 if(x > 5) {
   y <- TRUE
 } else {
   y <- FALSE
 }
 x; y
-
-# De este modo estamos asignando un valor a una variable en función del valor 
-# de otra. Lo que se debe tener en cuenta es que la condición debe retornar un 
+# De este modo estamos asignando un valor a una variable en funci?n del valor 
+# de otra. Lo que se debe tener en cuenta es que la condici?n debe retornar un 
 # valor TRUE o FALSE.

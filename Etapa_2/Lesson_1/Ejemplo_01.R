@@ -13,9 +13,9 @@
 # Se tiene una serie de códigos los cuales deberán irse corriento línea a línea, recordar que siempre se ejecuta una línea presionando Ctrl + Enter
 
 # Primero vamos a crear algunas variables de diferentes tipos:
-  
+ 
 (var.hola <- "Hola Mundo")
-(var.number <- 5L)
+(var.number <- 5L) #integer instead of double/numeric
 (var.double <- 2.7076)
 (var.logical <- T)
 (vector <- c(1,2))
@@ -32,10 +32,14 @@ class(var.logical)
 class(var.logical)
 typeof(var.logical)
 
+
 # En este paso vamos a crear vectores, siempre serán de la forma c(elem1, elem2, ...)
 
 a <- c(4, 6, 8, 10,12)
 b <- c(3, 5, 7, 9)
+
+class(a)
+typeof(a)
 
 # Para saber la longitud del vector
 
@@ -54,6 +58,8 @@ c(a,b)
 # Organizarlos con la función sort, cambia la F por T y observa que ocurre
 
 sort(c(a,b), decreasing = F)
+sort(c(a,b))
+sort(c(a,b), decreasing=T)
 
 # Otra forma de generar el vector es de la siguiente manera, utilizando ":"
 
@@ -93,3 +99,4 @@ a/b
 a^2
 a1 <- a*0.5 + b^2
 a1[1]
+a1

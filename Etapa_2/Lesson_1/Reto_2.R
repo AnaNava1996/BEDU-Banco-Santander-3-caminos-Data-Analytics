@@ -1,26 +1,25 @@
-# 1. Genera un vector de 44 entradas (aleatorias) llamado ran
-ran <- runif(n = 44)
-ran
-# 2. Escribe un loop que eleve al cubo las primeras 15 entradas y les sume 12
+#Realizar la lectura de los datos y seguir las instruccines que se muestran a continuación.
 
-res <- vector()
-for (i in 1:15) {
-  res[i] <- (ran[i]^3) + 12
-}
+#Utiliza el data frame de ventas de libros por Amazon y realiza las siguientes actividades:
+  
+#  Almacenalo en un data frame que se llame amazon.best
 
-# 3. Guarda el resultado en un data frame, donde la primera columna sea el número aleatorio y la segunda el resultado, nómbralo df.al
+amazon.best <- read.csv("./Data/bestsellers with categories.csv")
+tail(amazon.best)
 
-write.csv(res,"res.csv")
+#Calcula el data frame transpuesto, asígnale el nombre de tAmazon y conviértelo en un data frame (Hint: consulta la ayuda sobre las funciones t y as.data.frame)
+tAmazon <- as.data.frame(t(amazon.best))
+head(tAmazon)
+#Usa el nombre de los libros como el nombre de las columnas (Hint: consulta la documentación de names, tienes que hacer algo similar a names(dataframe) <- vector de nuevos nombres)
+colnames(tAmazon) <- tAmazon[1,]
 
-# 4. Escribe el pseudocódigo del loop anterior
+row.names(tAmazon)
+head(tAmazon)
 
-# ran = asigno un vector de 44 randoms
-# res = asigno un vector
-#
-# begin for loop  i de 1 a 15:
-#     res[i] = ran*ran*ran + 12
-# end del for loop
-#
-# Escribo res en "res.csv"
+tail(tAmazon)
+#¿Cúal es el libro de menor y mayor precio?
+which.max(tAmazon["Price",])
+which.min(tAmazon["Price",])
 
 
+which.max(amazon.best$Price)

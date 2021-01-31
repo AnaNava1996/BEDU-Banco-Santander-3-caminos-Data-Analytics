@@ -21,15 +21,15 @@ getwd()
 
 # Fijando el directorio de trabajo
 
-setwd("C:/Users/DELL/Desktop/BS/Programacion-con-R-Santander-master/Sesion-01/Data") # Depende del usuario
+setwd("/home/ana/Desktop/BEDU/BEDU-Banco-Santander-3-caminos-Data-Analytics/Etapa_2/Lesson_1/") # Depende del usuario
 
 # La función read.csv será util para leer fichero .csv
 
-read.csv("bestsellers with categories.csv") # El archivo csv debe estar en el directorio de trabajo
+read.csv("./Data/bestsellers with categories.csv") # El archivo csv debe estar en el directorio de trabajo
 
 # se puede asignar a un objeto el fichero leido anteriormente
 
-amazon.books <- read.csv("bestsellers with categories.csv")
+amazon.books <- read.csv("./Data/bestsellers with categories.csv")
 tail(amazon.books); str(amazon.books)
 
 # También se puede leer el fichero directamente desde una URL
